@@ -84,9 +84,9 @@ static const char *nightshift[]={"nightshift", NULL};
 static const char *scrot_active[]={"scrot-active", NULL};
 static const char *scrot_select[]={"scrot-select", NULL};
 static const char *scrot_screen[]={"scrot-screen", NULL};
-static const char *logseq[]={"logseq", NULL};
-static const char *qtcreator[]={"qtcreator", NULL};
-static const char *vscode[]={"code", NULL};
+static const char *logseq[]={"lof", "logseq", NULL};
+static const char *qtcreator[]={"lof", "qtcreator", NULL};
+static const char *vscode[]={"lof", "code", NULL};
 
 
 static Key keys[] = {
