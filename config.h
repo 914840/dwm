@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 5;        /* border pixel of windows */
@@ -42,6 +43,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "st-256color",  NULL,       "pulsemixer",       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -87,6 +89,10 @@ static const char *scrot_screen[]={"scrot-screen", NULL};
 static const char *logseq[]={"lof", "logseq", NULL};
 static const char *qtcreator[]={"lof", "qtcreator", NULL};
 static const char *vscode[]={"lof", "code", NULL};
+static const char *pulsemixer[]={"lof", "st", "-e", "pulsemixer", NULL};
+static const char *volume_up[]={"pamixer", "-i", "1", NULL};
+static const char *volume_down[]={"pamixer", "-d", "1", NULL};
+static const char *mute_toggle[]={"pamixer", "-t", NULL};
 
 
 static Key keys[] = {
@@ -141,7 +147,10 @@ static Key keys[] = {
 	{ MODKEY|ALTKEY,                XK_l,      spawn,          {.v = logseq } },
 	{ MODKEY|ALTKEY,                XK_q,      spawn,          {.v = qtcreator } },
 	{ MODKEY|ALTKEY,                XK_v,      spawn,          {.v = vscode } },
-
+	{ MODKEY|ALTKEY,                XK_a,      spawn,          {.v = pulsemixer } },
+	{ 0,							XF86XK_AudioRaiseVolume,      spawn,          {.v = volume_up } },
+	{ 0,							XF86XK_AudioLowerVolume,      spawn,          {.v = volume_down } },
+	{ 0,							XF86XK_AudioMute,             spawn,          {.v = mute_toggle } },
 };
 
 /* button definitions */
