@@ -84,6 +84,7 @@ static const char *nightshift[]={"nightshift", NULL};
 static const char *scrot_active[]={"scrot-active", NULL};
 static const char *scrot_select[]={"scrot-select", NULL};
 static const char *scrot_screen[]={"scrot-screen", NULL};
+static const char *logseq[]={"logseq", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -134,6 +135,8 @@ static Key keys[] = {
 	{ 0,                            XK_Print,  spawn,          {.v = scrot_screen } },
 	{ ALTKEY,                       XK_Print,  spawn,          {.v = scrot_active } },
 	{ ControlMask,                  XK_Print,  spawn,          {.v = scrot_select } },
+	{ MODKEY|ALTKEY,                XK_l,      spawn,          {.v = logseq } },
+
 };
 
 /* button definitions */
