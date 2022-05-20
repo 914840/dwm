@@ -3,7 +3,7 @@
 #include "movestack.c"
 
 /* appearance */
-static const unsigned int borderpx          = 5; /* border pixel of windows */
+static const unsigned int borderpx          = 3; /* border pixel of windows */
 static const int gappx                      = 5; /* gaps between windows */
 static const unsigned int snap              = 32; /* snap pixel */
 static const int showbar                    = 1;        /* 0 means no bar */
@@ -41,10 +41,9 @@ static const Rule rules[] = {
      *  WM_CLASS(STRING) = instance, class
      *  WM_NAME(STRING) = title
      */
-    /* class            instance title          tags mask isfloating monitor */
-    { "Gimp",           NULL, NULL,         0, 1, -1 },
-    { "Firefox",        NULL, NULL,         1 << 8, 0, -1 },
-    { "st-256color",    NULL, "pulsemixer", 1 << 8, 1, -1 },
+    /* class            instance    title           tags    mask    isfloating monitor */
+    { "Gimp",           NULL,       NULL,           0,      1,      -1 },
+    { "Firefox",        NULL,       NULL,           1 << 8, 0,      -1 },
 };
 
 /* layout(s) */
